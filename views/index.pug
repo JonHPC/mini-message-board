@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Post your thoughts in the #{title}
+  div.message-container
+    a(href="/new")
+      button(type="button" id='new-msg-btn' class='button') Post New Message
+    each object in messages
+      div.message-card
+        each value, key in object
+          p= key + ": " + value

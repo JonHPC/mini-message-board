@@ -1,0 +1,11 @@
+extends layout 
+
+block content 
+    h1= title
+    p Post your thoughts in the #{title}
+    main
+        section.form-container 
+            form(method='POST' action='/new' class='input-form')
+                input(type='text' placeholder='Username' name='username' id='username' class='user-input' required)
+                textarea(name='description' placeholder='Enter your message here' cols='30' class='description-input' required)
+                button(type='submit' id='submit-btn' class='button')= 'Post'
